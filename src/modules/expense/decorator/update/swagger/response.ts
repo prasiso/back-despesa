@@ -1,13 +1,14 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiResponse } from '@nestjs/swagger';
 import { ResponseGlobalSwagger } from 'src/shared/decorator/response-global-swagger';
-import { Resp200Dto, Resp409Dto, Resp400Dto, Resp404Dto } from './dto-response';
+import { Resp409Dto, Resp400Dto } from './dto-response';
+import { RespGlobal200Expense, RespGlobal404Expense } from '../../global';
 export const ResponseSwagger = () => {
   return applyDecorators(
     ResponseGlobalSwagger(false),
     ApiResponse({
       status: 200,
-      type: Resp200Dto,
+      type: RespGlobal200Expense,
     }),
     ApiResponse({
       status: 400,
@@ -19,7 +20,7 @@ export const ResponseSwagger = () => {
     }),
     ApiResponse({
       status: 404,
-      type: Resp404Dto
+      type: RespGlobal404Expense
     }),
   );
 };
