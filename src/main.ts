@@ -5,10 +5,15 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { version } from '../package.json';
 import { CustomExceptionFilter } from './shared/global';
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
+  app.enableCors({
+    origin: '*',
+    credentials: true
+  })
   const config = new DocumentBuilder()
     .setTitle('Api Despesa')
     .setDescription('Api criada para computar a despesa')
+    .addBearerAuth()
     .setVersion(String(version))
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config)
