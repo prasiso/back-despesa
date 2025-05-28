@@ -50,7 +50,7 @@ export class ExpenseService {
   }
 
   async update(id: string, updateExpenseDto: UpdateExpenseDto) {
-    updateExpenseDto.updatedAt = new Date()
+    updateExpenseDto.updatedAt = new Date();
     return await this.prismaService.expense.update({
       where: {
         id,
@@ -62,7 +62,10 @@ export class ExpenseService {
     });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} expense`;
+  async remove(id: string) {
+    return await this.prismaService.expense.delete({
+      where: { id },
+      omit: { norm_title: true },
+    });
   }
 }

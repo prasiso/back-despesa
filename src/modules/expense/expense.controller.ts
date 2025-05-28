@@ -9,7 +9,7 @@ import {
 import { ExpenseService } from './expense.service';
 import { CreateExpenseDto } from './dto/create-expense.dto';
 import { UpdateExpenseDto } from './dto/update-expense.dto';
-import { d_create, d_find_one, d_update } from './decorator';
+import { d_create, d_delete, d_find_one, d_update } from './decorator';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller('expense')
@@ -50,8 +50,12 @@ export class ExpenseController {
     return await this.expenseService.update(id, updateExpenseDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.expenseService.remove(+id);
+  @d_delete()
+  async remove(@Param('id') id: string) {
+    const item = await this.expenseService.findOne(id, {
+      select: { id: true },
+    });
+    if (!item) throw new NotFoundException('Não foi encontrado despesa!');
+    return this.expenseService.remove(id);
   }
 }
