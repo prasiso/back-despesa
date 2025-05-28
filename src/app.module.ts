@@ -5,9 +5,10 @@ import { AuthModule } from './modules/auth/auth.module';
 import { JwtModule } from 'src/shared/services/jwt/jwt.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './shared/global/guard';
+import { HealthModule } from './health/health.module';
 
 @Module({
-  imports: [PrismaModule, ExpenseModule, AuthModule, JwtModule],
+  imports: [PrismaModule, ExpenseModule, AuthModule, JwtModule, HealthModule],
   providers: [
     {
       provide: APP_GUARD,
