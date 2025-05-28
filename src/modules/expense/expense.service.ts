@@ -12,7 +12,7 @@ import { title } from 'process';
 
 @Injectable()
 export class ExpenseService {
-  constructor(private readonly prismaService: PrismaService) {}
+  constructor(private readonly prismaService: PrismaService) { }
 
   async validExistTitle(title: string, id?: string) {
     const norm = normalizeName(title);
@@ -38,15 +38,18 @@ export class ExpenseService {
     });
   }
 
-  async findAll(params: Prisma.expenseFindManyArgs) {
+  async findAll(params: Prisma.expenseFindManyArgs, isSum = true) {
     const exp = this.prismaService.expense;
-    const [rows, count] = await Promise.all([
+    const req: any = [
       exp.findMany(params),
       exp.count({
         where: params.where,
       }),
-    ]);
-    return { rows, count };
+    ]
+    if (isSum && params.where)
+      req.push(exp.aggregate({ _sum: { amount: true }, where: params.where }))
+    const [rows, count, totalSum] = await Promise.all(req);
+    return { rows, count, totalSum: totalSum?._sum?.amount || 0 };
   }
 
   async findOne(id?: string, params?: Prisma.expenseFindFirstArgs) {
@@ -72,7 +75,7 @@ export class ExpenseService {
   async remove(id: string) {
     return await this.prismaService.expense.delete({
       where: { id },
-      omit: { norm_title: true },
+      omit: { norm_title: true, norm_category: true },
     });
   }
 }

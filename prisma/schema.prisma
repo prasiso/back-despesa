@@ -16,4 +16,5 @@ model expense {
   createdAt  DateTime @default(now()) @db.Timestamp(6)
   updatedAt  DateTime @default(now()) @db.Timestamp(6)
   norm_title String   @default("") @db.VarChar
+  norm_category String   @default("") @db.VarChar
 }
