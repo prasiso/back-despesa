@@ -1,21 +1,31 @@
 import {
   Controller,
-  Get,
   Body,
   Param,
-  Delete,
   NotFoundException,
+  Query,
 } from '@nestjs/common';
 import { ExpenseService } from './expense.service';
-import { CreateExpenseDto } from './dto/create-expense.dto';
-import { UpdateExpenseDto } from './dto/update-expense.dto';
-import { d_create, d_delete, d_find_one, d_update } from './decorator';
+import {
+  CreateExpenseDto,
+  UpdateExpenseDto,
+  QueryFindAllExpenseDto,
+} from './dto';
+import {
+  d_create,
+  d_delete,
+  d_find_all,
+  d_find_one,
+  d_update,
+} from './decorator';
 import { ApiTags } from '@nestjs/swagger';
+import { Prisma } from '@prisma/client';
+import { pagination_helper, pagination_prisma } from 'src/shared/helper';
 
 @Controller('expense')
 @ApiTags('Despesa')
 export class ExpenseController {
-  constructor(private readonly expenseService: ExpenseService) {}
+  constructor(private readonly expenseService: ExpenseService) { }
 
   @d_create()
   async create(@Body() createExpenseDto: CreateExpenseDto) {
@@ -23,9 +33,19 @@ export class ExpenseController {
     return await this.expenseService.create(createExpenseDto);
   }
 
-  @Get()
-  findAll() {
-    return this.expenseService.findAll();
+  @d_find_all()
+  async findAll(@Query() query: QueryFindAllExpenseDto) {
+    const { limit, page, order } = query;
+    const orderBy: Prisma.expenseOrderByWithAggregationInput = order ?? {
+      updatedAt: 'asc',
+    };
+    const { rows, count } = await this.expenseService.findAll({
+      orderBy,
+      ...pagination_prisma(limit, page),
+      omit: { norm_title: true }
+    });
+    const data = pagination_helper(page, limit, count, rows)
+    return data
   }
 
   @d_find_one()
@@ -34,7 +54,7 @@ export class ExpenseController {
       omit: { norm_title: true },
     });
     if (!item) throw new NotFoundException('Não foi encontrado despesa!');
-    return item
+    return item;
   }
 
   @d_update()

@@ -38,8 +38,15 @@ export class ExpenseService {
     });
   }
 
-  findAll() {
-    return `This action returns all expense`;
+  async findAll(params: Prisma.expenseFindManyArgs) {
+    const exp = this.prismaService.expense;
+    const [rows, count] = await Promise.all([
+      exp.findMany(params),
+      exp.count({
+        where: params.where,
+      }),
+    ]);
+    return { rows, count };
   }
 
   async findOne(id?: string, params?: Prisma.expenseFindFirstArgs) {
