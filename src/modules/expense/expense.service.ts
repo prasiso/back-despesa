@@ -1,13 +1,18 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateExpenseDto } from './dto/create-expense.dto';
 import { UpdateExpenseDto } from './dto/update-expense.dto';
 import { PrismaService } from 'src/database/prisma.service';
 import { normalizeName } from 'src/shared/helper';
 import { Prisma } from '@prisma/client';
+import { title } from 'process';
 
 @Injectable()
 export class ExpenseService {
-  constructor(private readonly prismaService: PrismaService) { }
+  constructor(private readonly prismaService: PrismaService) {}
 
   async validExistTitle(title: string, id?: string) {
     const norm = normalizeName(title);
@@ -19,26 +24,41 @@ export class ExpenseService {
         not: id,
       };
     }
-    const expenses = await this.prismaService.expense.findFirst({ where });
+    const expenses = await this.findOne(undefined, { where });
     if (expenses) {
       throw new ConflictException('Já existe despesa com esse nome no banco');
     }
   }
   async create(data: CreateExpenseDto) {
-    await this.validExistTitle(data.title)
-    return await this.prismaService.expense.create({ data });
+    return await this.prismaService.expense.create({
+      data,
+      omit: {
+        norm_title: true,
+      },
+    });
   }
 
   findAll() {
     return `This action returns all expense`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} expense`;
+  async findOne(id?: string, params?: Prisma.expenseFindFirstArgs) {
+    params ??= {};
+    params.where ??= {};
+    if (id) params.where.id = id;
+    return await this.prismaService.expense.findFirst(params);
   }
 
-  update(id: number, updateExpenseDto: UpdateExpenseDto) {
-    return `This action updates a #${id} expense`;
+  async update(id: string, updateExpenseDto: UpdateExpenseDto) {
+    return await this.prismaService.expense.update({
+      where: {
+        id,
+      },
+      data: updateExpenseDto,
+      omit: {
+        norm_title: true,
+      },
+    });
   }
 
   remove(id: number) {
