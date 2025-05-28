@@ -1,9 +1,7 @@
 import {
   Controller,
   Get,
-  Post,
   Body,
-  Patch,
   Param,
   Delete,
   NotFoundException,
@@ -11,13 +9,13 @@ import {
 import { ExpenseService } from './expense.service';
 import { CreateExpenseDto } from './dto/create-expense.dto';
 import { UpdateExpenseDto } from './dto/update-expense.dto';
-import { d_create, d_update } from './decorator';
+import { d_create, d_find_one, d_update } from './decorator';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller('expense')
 @ApiTags('Despesa')
 export class ExpenseController {
-  constructor(private readonly expenseService: ExpenseService) { }
+  constructor(private readonly expenseService: ExpenseService) {}
 
   @d_create()
   async create(@Body() createExpenseDto: CreateExpenseDto) {
@@ -30,9 +28,13 @@ export class ExpenseController {
     return this.expenseService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.expenseService.findOne(id);
+  @d_find_one()
+  async findOne(@Param('id') id: string) {
+    const item = await this.expenseService.findOne(id, {
+      omit: { norm_title: true },
+    });
+    if (!item) throw new NotFoundException('Não foi encontrado despesa!');
+    return item
   }
 
   @d_update()

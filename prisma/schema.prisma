@@ -13,7 +13,7 @@ model expense {
   amount     Float    @db.Real
   category   String   @db.VarChar
   date       DateTime @db.Timestamp(6)
-  createdat  DateTime @default(now()) @db.Timestamp(6)
-  updatedat  DateTime @default(now()) @db.Timestamp(6)
+  createdAt  DateTime @default(now()) @db.Timestamp(6)
+  updatedAt  DateTime @default(now()) @db.Timestamp(6)
   norm_title String   @default("") @db.VarChar
 }

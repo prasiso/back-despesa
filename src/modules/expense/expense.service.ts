@@ -50,6 +50,7 @@ export class ExpenseService {
   }
 
   async update(id: string, updateExpenseDto: UpdateExpenseDto) {
+    updateExpenseDto.updatedAt = new Date()
     return await this.prismaService.expense.update({
       where: {
         id,
