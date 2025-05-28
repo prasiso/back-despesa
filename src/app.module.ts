@@ -3,8 +3,16 @@ import { PrismaModule } from './database/prisma.module';
 import { ExpenseModule } from './modules/expense/expense.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { JwtModule } from 'src/shared/services/jwt/jwt.module';
+import { APP_GUARD } from '@nestjs/core';
+import { AuthGuard } from './shared/global/guard';
 
 @Module({
   imports: [PrismaModule, ExpenseModule, AuthModule, JwtModule],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: AuthGuard
+    }
+  ]
 })
 export class AppModule {}
