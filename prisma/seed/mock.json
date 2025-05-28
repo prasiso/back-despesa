@@ -1,0 +1,376 @@
+[
+  {
+    "title": "Fatura Nubank",
+    "category": "Cartão de Crédito",
+    "date": "2011-09-30T00:00:00",
+    "amount": 398.57
+  },
+  {
+    "title": "Energia Celpe",
+    "category": "Luz",
+    "date": "2014-06-19T00:00:00",
+    "amount": 261.03
+  },
+  {
+    "title": "C&A",
+    "category": "Roupas",
+    "date": "2017-04-14T00:00:00",
+    "amount": 630.81
+  },
+  {
+    "title": "Netflix",
+    "category": "Lazer",
+    "date": "2011-07-02T00:00:00",
+    "amount": 194.51
+  },
+  {
+    "title": "IPTU",
+    "category": "Impostos",
+    "date": "2017-01-02T00:00:00",
+    "amount": 1476.48
+  },
+  {
+    "title": "Fatura Mastercard",
+    "category": "Cartão de Crédito",
+    "date": "2010-09-23T00:00:00",
+    "amount": 396.72
+  },
+  {
+    "title": "Compra Carrefour",
+    "category": "Supermercado",
+    "date": "2020-06-01T00:00:00",
+    "amount": 260.33
+  },
+  {
+    "title": "IPVA",
+    "category": "Impostos",
+    "date": "2021-03-11T00:00:00",
+    "amount": 1034.66
+  },
+  {
+    "title": "C&A",
+    "category": "Roupas",
+    "date": "2017-01-27T00:00:00",
+    "amount": 154.95
+  },
+  {
+    "title": "Vivo Controle",
+    "category": "Telefone",
+    "date": "2015-10-11T00:00:00",
+    "amount": 130.51
+  },
+  {
+    "title": "Uber",
+    "category": "Transporte",
+    "date": "2023-07-13T00:00:00",
+    "amount": 84.27
+  },
+  {
+    "title": "Água Copasa",
+    "category": "Água",
+    "date": "2010-11-28T00:00:00",
+    "amount": 90.98
+  },
+  {
+    "title": "Compra Assaí",
+    "category": "Supermercado",
+    "date": "2023-03-18T00:00:00",
+    "amount": 688.63
+  },
+  {
+    "title": "Spotify Premium",
+    "category": "Lazer",
+    "date": "2012-10-22T00:00:00",
+    "amount": 104.93
+  },
+  {
+    "title": "TIM Pós",
+    "category": "Telefone",
+    "date": "2017-04-26T00:00:00",
+    "amount": 61.41
+  },
+  {
+    "title": "Seguro Auto Porto",
+    "category": "Seguro",
+    "date": "2015-07-06T00:00:00",
+    "amount": 832.18
+  },
+  {
+    "title": "Consulta oftalmologista",
+    "category": "Saúde",
+    "date": "2016-08-09T00:00:00",
+    "amount": 223.5
+  },
+  {
+    "title": "Conta Enel",
+    "category": "Luz",
+    "date": "2022-05-04T00:00:00",
+    "amount": 199.62
+  },
+  {
+    "title": "Energia Eletropaulo",
+    "category": "Luz",
+    "date": "2013-12-10T00:00:00",
+    "amount": 220.45
+  },
+  {
+    "title": "Água Sabesp",
+    "category": "Água",
+    "date": "2018-01-14T00:00:00",
+    "amount": 73.64
+  },
+  {
+    "title": "Faculdade Estácio",
+    "category": "Educação",
+    "date": "2019-06-01T00:00:00",
+    "amount": 890.0
+  },
+  {
+    "title": "Compra Mercado Livre",
+    "category": "Cartão de Crédito",
+    "date": "2022-10-05T00:00:00",
+    "amount": 711.31
+  },
+  {
+    "title": "Uber",
+    "category": "Transporte",
+    "date": "2014-01-20T00:00:00",
+    "amount": 240.22
+  },
+  {
+    "title": "Aluguel Apt 402",
+    "category": "Aluguel",
+    "date": "2021-02-01T00:00:00",
+    "amount": 1780.0
+  },
+  {
+    "title": "Compra Extra",
+    "category": "Supermercado",
+    "date": "2023-01-25T00:00:00",
+    "amount": 512.78
+  },
+  {
+    "title": "Internet Vivo Fibra",
+    "category": "Internet",
+    "date": "2020-08-09T00:00:00",
+    "amount": 145.5
+  },
+  
+  {
+    "title": "Farmácia Pacheco",
+    "category": "Saúde",
+    "date": "2012-05-21T00:00:00",
+    "amount": 75.0
+  },
+  {
+    "title": "Conta Tim",
+    "category": "Telefone",
+    "date": "2014-10-01T00:00:00",
+    "amount": 98.63
+  },
+  {
+    "title": "Plano de Saúde Amil",
+    "category": "Saúde",
+    "date": "2016-12-13T00:00:00",
+    "amount": 530.12
+  },
+  {
+    "title": "Gasolina Shell",
+    "category": "Transporte",
+    "date": "2022-03-04T00:00:00",
+    "amount": 290.0
+  },
+  {
+    "title": "Compra Riachuelo",
+    "category": "Roupas",
+    "date": "2011-08-10T00:00:00",
+    "amount": 222.98
+  },
+  {
+    "title": "Renner",
+    "category": "Roupas",
+    "date": "2018-05-19T00:00:00",
+    "amount": 307.45
+  },
+  {
+    "title": "Mensalidade Anhanguera",
+    "category": "Educação",
+    "date": "2015-09-01T00:00:00",
+    "amount": 625.0
+  },
+  {
+    "title": "Conta Claro NET",
+    "category": "Internet",
+    "date": "2017-10-28T00:00:00",
+    "amount": 129.9
+  },
+  {
+    "title": "Conserto celular",
+    "category": "Outros",
+    "date": "2019-11-05T00:00:00",
+    "amount": 350.0
+  },
+  {
+    "title": "Academia Smart Fit",
+    "category": "Saúde",
+    "date": "2021-12-02T00:00:00",
+    "amount": 99.9
+  },
+  {
+    "title": "Uber",
+    "category": "Transporte",
+    "date": "2016-08-19T00:00:00",
+    "amount": 47.36
+  },
+  {
+    "title": "Energia CPFL",
+    "category": "Luz",
+    "date": "2013-03-18T00:00:00",
+    "amount": 187.23
+  },
+  {
+    "title": "Supermercado Dia",
+    "category": "Supermercado",
+    "date": "2020-07-06T00:00:00",
+    "amount": 392.85
+  },
+  {
+    "title": "Spotify Família",
+    "category": "Lazer",
+    "date": "2022-06-30T00:00:00",
+    "amount": 49.9
+  },
+  {
+    "title": "Conta TIM",
+    "category": "Telefone",
+    "date": "2010-12-09T00:00:00",
+    "amount": 85.75
+  },
+  {
+    "title": "Fatura VISA",
+    "category": "Cartão de Crédito",
+    "date": "2021-01-30T00:00:00",
+    "amount": 812.0
+  },
+  {
+    "title": "IPVA 2023",
+    "category": "Impostos",
+    "date": "2023-01-15T00:00:00",
+    "amount": 986.0
+  },
+  {
+    "title": "Energia Cemig",
+    "category": "Luz",
+    "date": "2018-09-24T00:00:00",
+    "amount": 165.88
+  },
+  {
+    "title": "Supermercado Zona Sul",
+    "category": "Supermercado",
+    "date": "2021-11-21T00:00:00",
+    "amount": 401.66
+  },
+  {
+    "title": "Consulta dentista",
+    "category": "Saúde",
+    "date": "2020-02-10T00:00:00",
+    "amount": 200.0
+  },
+  {
+    "title": "Revisão carro",
+    "category": "Transporte",
+    "date": "2019-04-01T00:00:00",
+    "amount": 650.0
+  },
+  {
+    "title": "Aluguel Casa",
+    "category": "Aluguel",
+    "date": "2016-10-01T00:00:00",
+    "amount": 1900.0
+  },
+  {
+    "title": "Mensalidade Curso Inglês",
+    "category": "Educação",
+    "date": "2020-04-11T00:00:00",
+    "amount": 320.0
+  },
+  {
+    "title": "Conta Oi",
+    "category": "Telefone",
+    "date": "2013-02-16T00:00:00",
+    "amount": 76.9
+  },
+  {
+    "title": "Netflix Premium",
+    "category": "Lazer",
+    "date": "2022-12-01T00:00:00",
+    "amount": 55.9
+  },
+  {
+    "title": "Água Sanepar",
+    "category": "Água",
+    "date": "2014-11-17T00:00:00",
+    "amount": 93.25
+  },
+  
+  {
+    "title": "Conta de Luz EletroSul",
+    "category": "Luz",
+    "date": "2025-03-10T00:00:00",
+    "amount": 134.90
+  },
+  {
+    "title": "Supermercado Estrela",
+    "category": "Supermercado",
+    "date": "2025-04-22T00:00:00",
+    "amount": 829.45
+  },
+  {
+    "title": "Plano de Saúde Unimed",
+    "category": "Saúde",
+    "date": "2025-06-15T00:00:00",
+    "amount": 495.30
+  },
+  {
+    "title": "Internet FibraNet",
+    "category": "Internet",
+    "date": "2025-07-05T00:00:00",
+    "amount": 119.99
+  },
+  {
+    "title": "Transporte Uber",
+    "category": "Transporte",
+    "date": "2025-02-08T00:00:00",
+    "amount": 78.60
+  },
+  {
+    "title": "Aluguel Apartamento",
+    "category": "Aluguel",
+    "date": "2025-01-01T00:00:00",
+    "amount": 2350.00
+  },
+  {
+    "title": "Telefone Claro",
+    "category": "Telefone",
+    "date": "2025-08-11T00:00:00",
+    "amount": 89.00
+  },
+  {
+    "title": "Faculdade Nova Esperança",
+    "category": "Educação",
+    "date": "2025-03-01T00:00:00",
+    "amount": 540.25
+  },
+  {
+    "title": "Cinema com amigos",
+    "category": "Lazer",
+    "date": "2025-09-18T00:00:00",
+    "amount": 56.00
+  },
+  {
+    "title": "IPTU Casa",
+    "category": "Impostos",
+    "date": "2025-05-10T00:00:00",
+    "amount": 412.67
+  }
+]
