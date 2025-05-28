@@ -13,6 +13,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Api Despesa')
     .setDescription('Api criada para computar a despesa')
+    .addBearerAuth()
     .setVersion(String(version))
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config)

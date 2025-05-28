@@ -1,5 +1,5 @@
 import { applyDecorators } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
 import { ResponseSwagger } from './response';
 export const Swagger = () => {
   return applyDecorators(
@@ -8,5 +8,6 @@ export const Swagger = () => {
       description: 'Responsável por buscar todas as despesas',
     }),
     ResponseSwagger(),
+    ApiBearerAuth()
   );
 };
