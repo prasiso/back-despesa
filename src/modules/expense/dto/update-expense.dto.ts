@@ -1,8 +1,8 @@
 import { CreateExpenseDto } from './create-expense.dto';
-import { Transform } from 'class-transformer';
+import { IsOptional } from 'class-validator';
 
 export class UpdateExpenseDto extends CreateExpenseDto {
-  @Transform(() => new Date())
-  updatedAt: Date;
+  @IsOptional()
+  updatedAt?: Date;
 
 }
