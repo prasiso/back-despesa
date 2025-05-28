@@ -10,14 +10,17 @@ import {
 import { ExpenseService } from './expense.service';
 import { CreateExpenseDto } from './dto/create-expense.dto';
 import { UpdateExpenseDto } from './dto/update-expense.dto';
+import { d_create } from './decorator';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('expense')
+@ApiTags('Despesa')
 export class ExpenseController {
   constructor(private readonly expenseService: ExpenseService) {}
 
-  @Post()
-  create(@Body() createExpenseDto: CreateExpenseDto) {
-    return this.expenseService.create(createExpenseDto);
+  @d_create()
+  async create(@Body() createExpenseDto: CreateExpenseDto) {
+    return await this.expenseService.create(createExpenseDto);
   }
 
   @Get()

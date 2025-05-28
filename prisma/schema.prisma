@@ -8,12 +8,12 @@ datasource db {
 }
 
 model expense {
-  id        String   @id(map: "expense_pk") @db.Uuid
-  title     String   @db.VarChar
-  amount    Float    @db.Real
-  category  String   @db.VarChar
-  date      DateTime @db.Timestamp(6)
-  createdat DateTime @default(now()) @db.Timestamp(6)
-  updatedat DateTime @default(now()) @db.Timestamp(6)
-  id_user   Int
+  id         String   @id(map: "expense_pk") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  title      String   @db.VarChar
+  amount     Float    @db.Real
+  category   String   @db.VarChar
+  date       DateTime @db.Timestamp(6)
+  createdat  DateTime @default(now()) @db.Timestamp(6)
+  updatedat  DateTime @default(now()) @db.Timestamp(6)
+  norm_title String   @default("") @db.VarChar
 }
