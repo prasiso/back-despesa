@@ -47,3 +47,8 @@ Para rodar em modo produção:
 ```
 Acesse em:
  - `http://localhost:3000`
+ - `https://back-despesa-production.up.railway.app`
+ - 
+## End points:
+Você pode ter acesso em:
+- `https://back-despesa-production.up.railway.app/documentation`
